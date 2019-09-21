@@ -1,6 +1,7 @@
 package clothingstore.com.example.demo.controller;
 
-import clothingstore.com.example.demo.domain.Category;
+import clothingstore.com.example.demo.domain.category.Category;
+import clothingstore.com.example.demo.domain.category.CategoryInsertDTO;
 import clothingstore.com.example.demo.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,11 @@ public class CategoryController {
     @Autowired
     private CategoryService service;
 
+    @PostMapping
+    public Category insert(@RequestBody CategoryInsertDTO category) {
+        return service.insert(category);
+    }
+
     @GetMapping("/{id}")
     public Category findById(@PathVariable("id") Long id) {
         return service.findById(id);
@@ -24,11 +30,6 @@ public class CategoryController {
     @GetMapping
     public List<Category> findAll() {
         return service.findAll();
-    }
-
-    @PostMapping
-    public Category insert(@RequestBody String categoryName) {
-        return service.insert(categoryName);
     }
 
     @DeleteMapping("/{id}")

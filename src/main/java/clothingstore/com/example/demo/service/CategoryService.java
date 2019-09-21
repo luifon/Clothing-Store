@@ -1,6 +1,7 @@
 package clothingstore.com.example.demo.service;
 
-import clothingstore.com.example.demo.domain.Category;
+import clothingstore.com.example.demo.domain.category.Category;
+import clothingstore.com.example.demo.domain.category.CategoryInsertDTO;
 import clothingstore.com.example.demo.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,19 +16,20 @@ public class CategoryService {
     @Autowired
     private CategoryRepository repository;
 
+    public Category insert(CategoryInsertDTO category) {
+        return repository.save(new Category(category.getName()));
+    }
+
     public Category findById(Long id) {
         return repository.findById(id).orElse(null);
     }
 
-    public Category insert(String name) {
-        return repository.save(new Category(name));
+    public List<Category> findAll() {
+        return repository.findAll();
     }
 
     public void deleteById(Long id) {
         repository.deleteById(id);
     }
 
-    public List<Category> findAll() {
-        return repository.findAll();
-    }
 }

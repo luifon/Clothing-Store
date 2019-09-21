@@ -1,6 +1,6 @@
 package clothingstore.com.example.demo.repository;
 
-import clothingstore.com.example.demo.domain.Category;
+import clothingstore.com.example.demo.domain.category.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

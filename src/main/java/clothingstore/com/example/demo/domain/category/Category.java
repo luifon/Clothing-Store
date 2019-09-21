@@ -1,4 +1,4 @@
-package clothingstore.com.example.demo.domain;
+package clothingstore.com.example.demo.domain.category;
 
 import lombok.Getter;
 import lombok.Setter;
