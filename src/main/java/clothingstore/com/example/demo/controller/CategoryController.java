@@ -1,6 +1,6 @@
 package clothingstore.com.example.demo.controller;
 
-import clothingstore.com.example.demo.domain.category.Category;
+import clothingstore.com.example.demo.domain.Category;
 import clothingstore.com.example.demo.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

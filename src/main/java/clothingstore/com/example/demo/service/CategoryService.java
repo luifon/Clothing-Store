@@ -1,6 +1,6 @@
 package clothingstore.com.example.demo.service;
 
-import clothingstore.com.example.demo.domain.category.Category;
+import clothingstore.com.example.demo.domain.Category;
 import clothingstore.com.example.demo.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

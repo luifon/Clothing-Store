@@ -1,4 +1,4 @@
-package clothingstore.com.example.demo.domain.category;
+package clothingstore.com.example.demo.domain;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,11 +12,11 @@ import java.util.Objects;
 public class Category {
 
     @Id
-    @Column(name = "id_product_type")
+    @Column(name = "id_category")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name_product_type")
+    @Column(name = "name_category")
     private String name;
 
     public Category() {
