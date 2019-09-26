@@ -19,7 +19,7 @@ public class CategoryController {
 
     @PostMapping
     public Category insert(@RequestBody CategoryInsertDTO category) {
-        return service.insert(category);
+        return service.save(category);
     }
 
     @GetMapping("/{id}")

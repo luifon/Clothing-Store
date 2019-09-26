@@ -16,7 +16,7 @@ public class CategoryService {
     @Autowired
     private CategoryRepository repository;
 
-    public Category insert(CategoryInsertDTO category) {
+    public Category save(CategoryInsertDTO category) {
         return repository.save(new Category(category.getName()));
     }
 
