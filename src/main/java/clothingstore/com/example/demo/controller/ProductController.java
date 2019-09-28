@@ -1,8 +1,7 @@
 package clothingstore.com.example.demo.controller;
 
-import clothingstore.com.example.demo.domain.category.Category;
-import clothingstore.com.example.demo.domain.category.CategoryInsertDTO;
-import clothingstore.com.example.demo.service.CategoryService;
+import clothingstore.com.example.demo.domain.product.Product;
+import clothingstore.com.example.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,24 +10,24 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/category")
-public class CategoryController {
+@RequestMapping("/product")
+public class ProductController {
 
     @Autowired
-    private CategoryService service;
+    private ProductService service;
 
     @PostMapping
-    public Category insert(@RequestBody CategoryInsertDTO category) {
-        return service.insert(category);
+    public Product save(@RequestBody Product product) {
+        return service.save(product);
     }
 
     @GetMapping("/{id}")
-    public Category findById(@PathVariable("id") Long id) {
+    public Product findById(@PathVariable("id") Long id) {
         return service.findById(id);
     }
 
     @GetMapping
-    public List<Category> findAll() {
+    public List<Product> findAll() {
         return service.findAll();
     }
 
@@ -37,4 +36,5 @@ public class CategoryController {
         service.deleteById(id);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
+
 }
